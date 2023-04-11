@@ -100,8 +100,11 @@ function cookie_like_dislike_generate_html()
 // Add shortcode
 function cookie_like_dislike_shortcode()
 {
-  $html = cookie_like_dislike_generate_html();
-  return $html;
+  $current_option = get_option('cookie_like_dislike_option');
+  if ($current_option == 'shortcode') {
+    $html = cookie_like_dislike_generate_html();
+    return $html;
+  }
 }
 add_shortcode('cookie_like_dislike_shortcode', 'cookie_like_dislike_shortcode');
 
